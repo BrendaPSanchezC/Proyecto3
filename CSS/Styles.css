@@ -21,6 +21,17 @@ body{
 .titulo span{
     font-size: 2rem;
 }
+.contenedor{
+    width: 120rem;
+  /*  margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;*/
+    margin: 0 auto ; /*igual podria ser 0 auto 0 auto*/
+}
+.nav-bg{
+    background-color: var(--secundario);
+}
 
 
 
@@ -30,4 +41,11 @@ body{
 /*si se important en uno no important que tan especifico eres va hacer caso a ese*/
 /*mas que naa esta es que la primera es la que va agarra como prioridad y por ejemplo si no hay la primero pues agarrara las demas cuando hay como 3 tipos de letras
 bold=negrita
-: es para pseudoclase*/
+: es para pseudoclase
+display:una manera en la que se acomoda los elementos
+normalize:para adaptar de mejor manera nuestra pagina a diferentes navegadores ya qu ehay algunos que no aceptan todo
+especificidad:mientras mas especifico seas mas caso te hace 
+rem: unidad de medida que se puede usar enves de los pixeles y se puede utilizar para que se adapte bien en todo tipo de pantallas, mas que nada para los tamaños de letras
+media query:
+dentro del root lo de los colores siempre deben ir con --
+una ventaje de poner el root es que si se quiere hacer un cambio en la paleta sea mas facil de cambiar*/
