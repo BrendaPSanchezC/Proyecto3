@@ -5,12 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BS Dev</title>
+    <link rel="preload" href="CSS/normalize.css" as="normalize">
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Krub:wght@700&display=swap" rel="stylesheet">
+    <link rel="preload" href="CSS/Styles.css" as="Style">
     <link rel="stylesheet" href="CSS/Styles.css">
 </head>
 
 <body>
     <header>
-        <h1>Brenda Sanchez Developer</h1>
+        <h1 class="titulo">Brenda Sanchez <span>Developer</span> </h1>
     </header>
     <nav>
         <ul>
@@ -21,7 +27,7 @@
         </ul>
     </nav>
     <section>
-        <h2>
+        <h2 class="titulo">
             Diseño y desarrollo Web
         </h2>
         <!--SVG:Graficos vectoriales escalabes, por ejemplo si ponemos una imagen va tenr una mejor calidad-->
@@ -111,7 +117,7 @@
     </section>
 
     <form>
-        <fieldset>
+        <fieldset><!--Permite organizar en grupos los campos de un formulario-->
             <legend>
                 Llena tus datos para establecer contacto
             </legend>
