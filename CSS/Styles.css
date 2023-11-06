@@ -22,7 +22,7 @@ body{
     font-size: 2rem;
 }
 .contenedor{
-    width: 120rem;
+    max-width: 120rem;
   /*  margin-top: 0;
     margin-right: auto;
     margin-bottom: 0;
@@ -32,6 +32,30 @@ body{
 .nav-bg{
     background-color: var(--secundario);
 }
+
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 2rem;
+}
+.navegacion-principal a{
+    padding: 1rem;
+    color: var(--blanco);
+    text-decoration: none;
+    
+}
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+@media (min-width: 768px) {
+    .navegacion-principal{
+        flex-direction: row;
+    }
+    
+ }
 
 
 
@@ -48,4 +72,12 @@ especificidad:mientras mas especifico seas mas caso te hace
 rem: unidad de medida que se puede usar enves de los pixeles y se puede utilizar para que se adapte bien en todo tipo de pantallas, mas que nada para los tamaños de letras
 media query:
 dentro del root lo de los colores siempre deben ir con --
-una ventaje de poner el root es que si se quiere hacer un cambio en la paleta sea mas facil de cambiar*/
+una ventaje de poner el root es que si se quiere hacer un cambio en la paleta sea mas facil de cambiar
+Media Queries(consulta):
+flex:
+nav:lo de lnav siempre si le agregas algo simepre te lo va a poner alado y no abajo 
+display: 
+padding: lo que esta del limite del elementohacia adentro
+margin: ess para lo qu esta fuera
+evenly: uniforme
+main axis:eje principal*/
