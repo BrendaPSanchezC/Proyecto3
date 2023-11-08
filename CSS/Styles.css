@@ -8,16 +8,29 @@
 }
 html {
     font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before,*:after{
+    box-sizing: inherit;
 }
 body{
     font-size: 16px;
     font-family: 'Krub', sans-serif;
 }
-.titulo{
-    text-align: center;
+/*Tipografias*/
+h1{
     font-size: 3.8rem;
-    font-family: Arial, Helvetica, sans-serif;
 }
+h2{
+    font-size: 2.8rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+h1,h2,h3{
+    text-align: center;
+}
+/*Títulos*/
 .titulo span{
     font-size: 2rem;
 }
@@ -39,6 +52,7 @@ body{
     justify-content: space-between;
     font-weight: bold;
     font-size: 2rem;
+    align-items: center;
 }
 .navegacion-principal a{
     padding: 1rem;
@@ -56,9 +70,53 @@ body{
     }
     
  }
+/*Hero*/
+.hero{
+    background-image: url(../img/hero.jpg);/*../ es para regresar a un nivel de directoria ya que la carpeta de img est afuera de CSS*/
+    background-repeat: no-repeat;/*Para evitar que se repita la imagen si se hace zoom rout*/
+    background-size: cover;/*Este nos da la opcion de poner el tamaño de la imagen y existen varios tamaños: auto:, cover:este ocupa tod el espacio disponible y contain:este toma el tamaño real de la imagen  */
+    height: 450px;/*alto dle elemento hero*/
+    position: relative;/* Al padre se le debe poner relative*/
+}
+.contenido-hero{
+    position: absolute;/*El hijo debe ser absolute*/
+    background-color: rgba(0,0,0,.7);/*El .7 es el 70% de transparencia*/
+    width: 100%;
+    height: 100%;
+    /*Alinear vertical y horizontalmente*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contenido-hero p, .contenido-hero h2 {
+    color: var(--blanco);
 
+}
+.ubicacion{/*Para crear el efecto de que esten juntos la imagen de ubicacion y el texto de merida*/
+    display: flex;
+    align-items: flex-end;
+}
+.boton{
+    background-color: var(--secundario);/*color de fondo*/
+    text-decoration: none;/*quitar el subrayado*/
+    padding: 1rem 3rem;/*espacio interior*/
+    border-radius: .5rem;/*esquinas redondeadas */
+    color: var(--blanco);/*Color del texto */ 
+    margin-top: 3rem;/*espacio exterior hacia arriba*/
+    font-weight: bold;/*negritas*/
+    font-size: 2rem;/*tamaño del texto*/
+    text-transform: uppercase;/*poner mayusculas*/
+    text-align: center;/*centrar texto*/
+    width: 90%;/*ancho dle boton, que abarque el 90% si la pantalla es pequeña */
 
-
+}
+@media (min-width: 768px) {/*Para que el boton se ajuste cuando este un poco menos al de una tablet agarre el tamaño auto*/
+    .boton{
+        width: auto;
+    }
+ }
+ 
 
 /*CSS siempre toma al ultio que pongas a pesar que ya hayas puesto uno antes pero si ers mas especifico pues va hacer mas caso al que esta mas especifico*/
 /*# es de id*/
@@ -80,4 +138,7 @@ display:
 padding: lo que esta del limite del elementohacia adentro
 margin: ess para lo qu esta fuera
 evenly: uniforme
-main axis:eje principal*/
+main axis:eje principal
+hay otros ocmo hover qu eson focus y visited qu eosn parecidos a hover peor hace diferente cosas
+snippets:
+box-model:cotent:el contenido,padding:el margen interior, dorder: si se le pone un margen, margin:el margen que va hacia afuera */
