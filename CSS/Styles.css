@@ -4,11 +4,14 @@
     --primario: #ffc107;
     --secundario: #0097a7;
     --gris: #757575;
+    --grisClaro: #DFE9F3 ;
+
 
 }
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
 }
 *, *:before,*:after{
     box-sizing: inherit;
@@ -16,6 +19,16 @@ html {
 body{
     font-size: 16px;
     font-family: 'Krub', sans-serif;
+}
+
+.sombra{
+    /*Sombra del elemento en */
+        box-shadow: 0px 0px 15px 0px rgba(112,112,112,0.48);
+        -webkit-box-shadow: 0px 0px 15px 0px rgba(112,112,112,0.48);
+        -moz-box-shadow: 0px 0px 15px 0px rgba(112,112,112,0.48);
+        background-color: var(--blanco);/*Color de fondo*/
+        padding: 2rem;/*Espacio interior*/
+        border-radius: 2rem;/*Esquinas redondeadas*/
 }
 /*Tipografias*/
 h1{
@@ -77,6 +90,7 @@ h1,h2,h3{
     background-size: cover;/*Este nos da la opcion de poner el tamaño de la imagen y existen varios tamaños: auto:, cover:este ocupa tod el espacio disponible y contain:este toma el tamaño real de la imagen  */
     height: 450px;/*alto dle elemento hero*/
     position: relative;/* Al padre se le debe poner relative*/
+    margin-bottom: 2rem;/*Margen inferiror para separar el espacio entre los 2*/
 }
 .contenido-hero{
     position: absolute;/*El hijo debe ser absolute*/
@@ -116,7 +130,41 @@ h1,h2,h3{
         width: auto;
     }
  }
- 
+
+ @media (min-width: 768px) {
+     /*Servicios*/
+ .servicios{
+    display: grid;/*Para habilitar el grid*/
+    /*grid-template-columns: 1fr 1fr 1fr;*/
+    grid-template-columns: repeat(3 , 1fr);
+    column-gap: 1 rem;
+    }
+  }
+  .servicio{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .servicio h3{
+    color: var(--secundario);
+    font-weight: normal;
+  }
+  .servicio p{
+    line-height: 2;/*Interlineado*/
+    text-align: center;
+  }
+  .servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+  }
+
 
 /*CSS siempre toma al ultio que pongas a pesar que ya hayas puesto uno antes pero si ers mas especifico pues va hacer mas caso al que esta mas especifico*/
 /*# es de id*/
@@ -141,4 +189,7 @@ evenly: uniforme
 main axis:eje principal
 hay otros ocmo hover qu eson focus y visited qu eosn parecidos a hover peor hace diferente cosas
 snippets:
-box-model:cotent:el contenido,padding:el margen interior, dorder: si se le pone un margen, margin:el margen que va hacia afuera */
+box-model:cotent:el contenido,padding:el margen interior, dorder: si se le pone un margen, margin:el margen que va hacia afuera 
+Gradiente:
+Grid: Para definir el Layout 
+Flexbox: sirve para alinear  */
