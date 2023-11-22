@@ -14,7 +14,18 @@ html {
     scroll-snap-type: y mandatory;/*la y significa que hace referencia al eje y que se enfoca en el scroll vertical y mandatory define que tan estricto se requiere el scroll*/
     background-image: linear-gradient(totop, var(--grisClaro) 0%, var(--blanco) 100%);/*Degradado de arriba hacia abajo*/
 }
-*, *:before,*:after{
+/*scroll snap*/
+.titulo,
+.servicios-heading,
+.contacto-heading{
+    scroll-snap-align: start;/*Indica el punto en donde el contenedor de desplazamiento al que debe ajustarse*/
+    scroll-snap-stop: always;/* Controla si el desplazamiento debe detenerse siempre en los puntos de ajuste */
+
+}
+
+*, 
+*:before,
+*:after{
     box-sizing: inherit;
 }
 
@@ -46,15 +57,6 @@ h1,h2,h3{
     text-align: center;/*Centrarlos*/
 }
 
-/*scroll snap*/
-.titulo,
-.servicios-heading,
-.contacto-heading{
-    scroll-snap-align: start;/*Indica el punto en donde el contenedor de desplazamiento al que debe ajustarse*/
-    scroll-snap-stop: always;/* Controla si el desplazamiento debe detenerse siempre en los puntos de ajuste */
-
-}
-
 /*Títulos*/
 .titulo span{
     font-size: 2rem;/*Tamaño letra*/
@@ -67,18 +69,24 @@ h1,h2,h3{
     margin-left: auto;*/
     margin: 0 auto ; /*igual podria ser 0 auto 0 auto*/
 }
+/*Utilidades*/
+.w-sm-100{
+    width: 100%;/*Ancho*/
+}
+@media (min-width: 768px) {
+    .w-sm-100 {
+        width: auto;
+    }   
+ }
+ .flex{
+    display: flex;
+ }
+ .alinear-derecha{
+    justify-content: flex-end;/*Para que este a la derecha siempre*/
+ }
 
 
  /*navegacion principal*/
- .nav-bg{
-    background-color: var(--secundario);/*Color de fondo*/
-}
-.navegacion-principal a{
-    padding: 1rem;/*Espacio interior*/
-    color: var(--blanco);/*Color*/
-    text-decoration: none;/*Quitarle lo subrayado*/   
-}
-
 .navegacion-principal {
     display: flex;  /*Contenido flexible*/
     flex-direction: column; /*Contenido dividido por columnas*/
@@ -86,16 +94,30 @@ h1,h2,h3{
     justify-content: space-between; /*Horizontalmente espacio entre componentes*/
     font-weight: bold; /*Negritas*/
     font-size: 2rem; /*Tamaño de letra*/
-    text-align: center; /*Alinear al centro*/
+    /*text-align: center;*/
+    align-items: center;
+     /*Alinear al centro*/
 }
-
+.nav-bg{
+    background-color: var(--secundario);/*Color de fondo*/
+}
+.navegacion-principal a{
+    color: var(--blanco);/*Color*/
+    text-decoration: none;/*Quitarle lo subrayado*/ 
+    padding: 1rem;/*Espacio interior*/  
+}
 
 
 .navegacion-principal a:hover{
     background-color: var(--primario);/*Para darle el efecto cuando pase la flechita encima*/
     color: var(--oscuro);/*Para cuando se pace la flechita la letra quede en otro color*/
 }
-    
+ 
+@media (min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row; /* Establece la dirección de los elementos flexibles en la fila */
+    }
+}
  
 /*Hero*/
 .hero{
@@ -109,8 +131,8 @@ h1,h2,h3{
 .contenido-hero{
     position: absolute;/*El hijo debe ser absolute*/
     background-color: rgba(0,0,0,.7);/*El .7 es el 70% de transparencia*/
-    width: 100%;
-    height: 100%;
+    width: 100%;/*ancho*/
+    height: 100%;/*alto*/
     /*Alinear vertical y horizontalmente*/
     display: flex;
     flex-direction: column;
@@ -137,7 +159,7 @@ h1,h2,h3{
     font-size: 2rem;/*tamaño del texto*/
     text-transform: uppercase;/*poner mayusculas*/
     text-align: center;/*centrar texto*/
-    width: 90%;/*ancho dle boton, que abarque el 90% si la pantalla es pequeña */
+    width: 90%;/*ancho del boton, que abarque el 90% si la pantalla es pequeña */
     border: none;/*Quitar el subrayado*/
 
 }
@@ -233,22 +255,6 @@ h1,h2,h3{
     cursor: pointer;/*Hover cambia a una mano cuando se pasa encima*/
  }
 
-/*Utilidades*/
-.w-sm-100{
-    width: 100%;/*Ancho*/
-}
-@media (min-width: 768px) {
-    .w-sm-100{
-        width: auto;
-    }   
- }
- .flex{
-    display: flex;
- }
- .alinear-derecha{
-    justify-content: flex-end;/*Para que este a la derecha siempre*/
- }
-
  @media (min-width: 768px) {/*Para que el boton se ajuste cuando este un poco menos al de una tablet agarre el tamaño auto*/
     .boton{
         width: auto;
@@ -262,13 +268,14 @@ h1,h2,h3{
         column-gap: 1rem; /* Espacio entre columnas */
         grid-template-rows: auto auto 20rem; /* Alturas específicas para cada fila */
         /* También se podría crear la clase de ayuda campo-correo para llamar el selector,  pero se recomienda no crear nuevas clases si no es estrictamente necesario.nth-child significa el # del hijo. El orden sería: nombre, teléfono, correo, mensaje. Como requerimos modificar correo y mensaje, usaremos 3 y 4 en nth-child */
+        }
         .campo:nth-child(3),
         .campo:nth-child(4){
-            grid-column: 1/3; /* Para posicionar el elemento, "que vaya de la columna 1 a la 
-    3*/
+        grid-column: 1/3; /* Para posicionar el elemento, "que vaya de la columna 1 a la
+        3*/
         }
-    }
-}
+        }
+
 
 .footer{
     text-align: center;/*Centrar el footer*/
